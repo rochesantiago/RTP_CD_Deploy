@@ -24,3 +24,17 @@ spec:
       - name: automation-data
         persistentVolumeClaim:
           claimName: automation-data-pvc
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: automationworker
+spec:
+  selector:
+    app: automationworker
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: ClusterIP
