@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: automationweb.local
+  - host: automationweb:7000
     http:
       paths:
       - path: /
