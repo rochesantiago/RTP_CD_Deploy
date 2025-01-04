@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: automationweb
-        image: roche12/automationtools-automationweb:latest
+        image: automationtools-automationweb:latest
         ports:
         - containerPort: 7000
 ---

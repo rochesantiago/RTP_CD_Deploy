@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: automationworker
-        image: roche12/automationtools-automationworker:latest
+        image: automationtools-automationworker:latest
         ports:
         - containerPort: 5000
 ---
