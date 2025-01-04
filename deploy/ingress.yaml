@@ -1,27 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: automation-ingress
-  namespace: default
-  annotations:
-    kubernetes.io/ingress.class: "nginx"  # Use appropriate ingress class
-    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: automationweb-ingress
 spec:
   rules:
-    - host: automationtools.com  # Replace with your domain
-      http:
-        paths:
-          - path: /web
-            pathType: Prefix
-            backend:
-              service:
-                name: automationweb  # Service name for AutomationWeb
-                port:
-                  number: 7000
-          - path: /worker
-            pathType: Prefix
-            backend:
-              service:
-                name: automationworker  # Service name for AutomationWorker
-                port:
-                  number: 80
+  - host: automationweb.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: automationweb
+            port:
+              number: 7000
