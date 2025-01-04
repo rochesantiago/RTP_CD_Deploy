@@ -39,4 +39,4 @@ spec:
   - protocol: TCP
     port: 7000
     targetPort: 7000
-  type: ClusterIP
+  type: LoadBalancer
