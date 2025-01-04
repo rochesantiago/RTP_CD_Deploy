@@ -5,7 +5,7 @@ metadata:
   labels:
     app: automationworker
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: automationworker
@@ -17,18 +17,10 @@ spec:
       containers:
       - name: automationworker
         image: roche12/automationtools-automationworker:latest
-        ports:
-        - containerPort: 5000
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: automationworker
-spec:
-  selector:
-    app: automationworker
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 5000
-  type: ClusterIP
+        volumeMounts:
+        - name: automation-data
+          mountPath: /watched/AutomationData
+      volumes:
+      - name: automation-data
+        persistentVolumeClaim:
+          claimName: automation-data-pvc

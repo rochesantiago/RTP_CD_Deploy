@@ -5,7 +5,7 @@ metadata:
   labels:
     app: automationweb
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: automationweb
@@ -19,6 +19,14 @@ spec:
         image: roche12/automationtools-automationweb:latest
         ports:
         - containerPort: 7000
+        volumeMounts:
+        - name: automation-data
+          mountPath: /watched/AutomationData
+      volumes:
+      - name: automation-data
+        persistentVolumeClaim:
+          claimName: automation-data-pvc
+
 ---
 apiVersion: v1
 kind: Service
@@ -29,6 +37,6 @@ spec:
     app: automationweb
   ports:
   - protocol: TCP
-    port: 80
+    port: 7000
     targetPort: 7000
   type: ClusterIP
