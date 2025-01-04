@@ -19,8 +19,6 @@ spec:
         image: roche12/automationtools-automationweb:latest
         ports:
         - containerPort: 7000
-        imagePullSecrets:
-        - name: regcred
 ---
 apiVersion: v1
 kind: Service
