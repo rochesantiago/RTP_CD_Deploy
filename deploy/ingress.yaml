@@ -8,7 +8,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: automation.web.com  # Replace with your domain
+    - host: automation.com  # Replace with your domain
       http:
         paths:
           - path: /web
