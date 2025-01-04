@@ -17,6 +17,13 @@ spec:
       containers:
       - name: automationworker
         image: roche12/automationtools-automationworker:latest
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
         volumeMounts:
         - name: automation-data
           mountPath: /watched/AutomationData
