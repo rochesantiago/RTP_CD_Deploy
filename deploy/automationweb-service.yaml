@@ -13,4 +13,4 @@ spec:
       port: 7000
       targetPort: 7000
   selector:
-    io.kompose.service: automationweb
+    app: automationweb
