@@ -1,30 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: automationworker
+  name: automationhangfireapi
   labels:
-    app: automationworker
+    app: automationhangfireapi
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: automationworker
+      app: automationhangfireapi
   template:
     metadata:
       labels:
-        app: automationworker
+        app: automationhangfireapi
     spec:
       containers:
-      - name: automationworker
-        image: roche12/automationtools-automationworker:latest
+      - name: automationhangfireapi
+        image: roche12/automationtools-automationhangfireapi:latest
         imagePullPolicy: Always
         resources:
           requests:
-            memory: "512Mi"
-            cpu: "1"
+            memory: "256Mi"
+            cpu: "250m"
           limits:
-            memory: "1Gi"
-            cpu: "2"
+            memory: "512Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5000
         volumeMounts:
         - name: automation-data
           mountPath: /watched/AutomationData
@@ -37,12 +39,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: automationworker
+  name: automationhangfireapi
 spec:
   selector:
-    app: automationworker
+    app: automationhangfireapi
   ports:
   - protocol: TCP
-    port: 8080
-    targetPort: 8080
+    port: 5000
+    targetPort: 5000
   type: ClusterIP
