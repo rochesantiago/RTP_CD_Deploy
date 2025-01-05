@@ -21,10 +21,10 @@ spec:
         resources:
           requests:
             memory: "512Mi"
-            cpu: "500m"
+            cpu: "1"
           limits:
             memory: "1Gi"
-            cpu: "1"
+            cpu: "2"
         volumeMounts:
         - name: automation-data
           mountPath: /watched/AutomationData
