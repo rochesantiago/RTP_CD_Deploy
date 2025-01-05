@@ -17,6 +17,7 @@ spec:
       containers:
       - name: automationworker
         image: roche12/automationtools-automationworker:latest
+        imagePullPolicy: Always
         resources:
           requests:
             memory: "256Mi"
