@@ -5,7 +5,7 @@ metadata:
   labels:
     app: automationhangfireapi
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: automationhangfireapi
@@ -27,6 +27,11 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 8080
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
+        - name: HANGFIRE_REDIS_CONNECTION
+          value: redis:6379
         volumeMounts:
         - name: automation-data
           mountPath: /watched/AutomationData
