@@ -12,7 +12,3 @@ spec:
     repoURL: https://github.com/rochesantiago/RTP_CD_Deploy.git
     targetRevision: master
     path: deploy/hpa
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true

@@ -9,11 +9,11 @@ spec:
     kind: Deployment
     name: automationhangfireapi
   minReplicas: 2
-  maxReplicas: 5
+  maxReplicas: 10
   metrics:
   - type: Resource
     resource:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: 50  # Scale when average CPU utilization exceeds 50%
+        averageUtilization: 70

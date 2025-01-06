@@ -8,10 +8,6 @@ spec:
     namespace: default
     server: https://kubernetes.default.svc
   project: default
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
   sources:
     - repoURL: https://github.com/rochesantiago/RTP_CD_Deploy.git
       targetRevision: master

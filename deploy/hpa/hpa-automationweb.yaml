@@ -9,11 +9,11 @@ spec:
     kind: Deployment
     name: automationweb
   minReplicas: 1
-  maxReplicas: 2
+  maxReplicas: 5
   metrics:
   - type: Resource
     resource:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: 60  # Scale when average CPU utilization exceeds 60%
+        averageUtilization: 70
