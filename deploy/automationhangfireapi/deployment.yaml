@@ -5,7 +5,7 @@ metadata:
   labels:
     app: automationhangfireapi
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: automationhangfireapi
@@ -20,11 +20,11 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            memory: "512Mi"
-            cpu: "500m"
+            memory: "1Gi"
+            cpu: "1"
           limits:
-            memory: "2Gi"
-            cpu: "2"
+            memory: "1Gi"
+            cpu: "1"
         ports:
         - containerPort: 8080
         env:
