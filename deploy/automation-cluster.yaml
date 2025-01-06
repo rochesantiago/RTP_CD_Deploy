@@ -17,16 +17,11 @@ spec:
       prune: true
       selfHeal: true
   sources:
-  - path: deploy/automationhangfireapi
-  - path: deploy/automationweb
-  - path: deploy/hpa
-  - path: deploy/ingress
-  - path: deploy/networkpolicy
-  - path: deploy/pvc
-  - path: deploy/redis
-status:
-  health:
-    status: Healthy
-  sync:
-    status: Synced
+    - path: deploy/automationweb/application.yaml
+    - path: deploy/automationhangfireapi/application.yaml
+    - path: deploy/hpa/application.yaml
+    - path: deploy/ingress/application.yaml
+    - path: deploy/networkpolicy/application.yaml
+    - path: deploy/pvc/application.yaml
+    - path: deploy/redis/application.yaml
     
