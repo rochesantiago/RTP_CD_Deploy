@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: automationweb
+spec:
+  selector:
+    app: automationweb
+  ports:
+  - protocol: TCP
+    port: 7000
+    targetPort: 7000
+  type: LoadBalancer
