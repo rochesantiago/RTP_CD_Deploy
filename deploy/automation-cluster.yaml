@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/rochesantiago/RTP_CD_Deploy.git
     targetRevision: master
-    path: deploy
+    path: deploy/
   syncPolicy:
     automated:
       prune: true
@@ -21,12 +21,3 @@ status:
     status: Healthy
   sync:
     status: Synced
-  
-  sources:
-  - path: deploy/automationhangfireapi
-  - path: deploy/automationweb
-  - path: deploy/hpa
-  - path: deploy/ingress
-  - path: deploy/networkpolicy
-  - path: deploy/pvc
-  - path: deploy/redis
