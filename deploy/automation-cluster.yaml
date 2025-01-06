@@ -21,3 +21,12 @@ status:
     status: Healthy
   sync:
     status: Synced
+  
+  sources:
+  - path: deploy/automationhangfireapi
+  - path: deploy/automationweb
+  - path: deploy/hpa
+  - path: deploy/ingress
+  - path: deploy/networkpolicy
+  - path: deploy/pvc
+  - path: deploy/redis
