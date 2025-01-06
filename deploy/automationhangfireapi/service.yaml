@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: automationhangfireapi
+spec:
+  selector:
+    app: automationhangfireapi
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
+  type: ClusterIP
+  sessionAffinity: None
