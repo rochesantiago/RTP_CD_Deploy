@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hpa-automation
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/rochesantiago/RTP_CD_Deploy.git
+    targetRevision: master
+    path: deploy/hpa
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
