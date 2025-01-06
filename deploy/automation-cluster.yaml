@@ -16,12 +16,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-  sources:
-    - path: deploy/automationweb/application.yaml
-    - path: deploy/automationhangfireapi/application.yaml
-    - path: deploy/hpa/application.yaml
-    - path: deploy/ingress/application.yaml
-    - path: deploy/networkpolicy/application.yaml
-    - path: deploy/pvc/application.yaml
-    - path: deploy/redis/application.yaml
-    
