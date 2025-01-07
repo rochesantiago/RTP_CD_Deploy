@@ -35,12 +35,6 @@ spec:
         volumeMounts:
         - name: automation-data
           mountPath: /watched/AutomationData
-        readinessProbe:
-          httpGet:
-            path: /healthcheck
-            port: 8080
-          initialDelaySeconds: 5
-          periodSeconds: 10
       volumes:
       - name: automation-data
         persistentVolumeClaim:
