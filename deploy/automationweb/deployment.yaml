@@ -35,6 +35,3 @@ spec:
       - name: automation-data
         persistentVolumeClaim:
           claimName: automation-data-pvc
-      syncPolicy:
-        automated:
-          prune: true
