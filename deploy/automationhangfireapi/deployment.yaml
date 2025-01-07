@@ -37,7 +37,7 @@ spec:
           mountPath: /watched/AutomationData
         readinessProbe:
           httpGet:
-            path: /
+            path: /healthcheck
             port: 8080
           initialDelaySeconds: 5
           periodSeconds: 10
