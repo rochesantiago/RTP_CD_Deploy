@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   name: automationweb-ingress
   annotations:
+    nginx.ingress.kubernetes.io/use-forwarded-headers: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
