@@ -14,6 +14,7 @@ spec:
       labels:
         app: automationhangfireapi
     spec:
+      revisionHistoryLimit: 3
       containers:
       - name: automationhangfireapi
         image: roche12/automationtools-automationhangfireapi:latest
@@ -39,3 +40,6 @@ spec:
       - name: automation-data
         persistentVolumeClaim:
           claimName: automation-data-pvc
+      syncPolicy:
+        automated:
+          prune: true
