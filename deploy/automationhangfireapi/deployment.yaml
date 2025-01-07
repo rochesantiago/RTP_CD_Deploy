@@ -35,6 +35,12 @@ spec:
         volumeMounts:
         - name: automation-data
           mountPath: /watched/AutomationData
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 7000
+          initialDelaySeconds: 5
+          periodSeconds: 10
       volumes:
       - name: automation-data
         persistentVolumeClaim:
