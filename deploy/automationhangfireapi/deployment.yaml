@@ -29,8 +29,8 @@ spec:
         - containerPort: 5000
         env:
         - name: ASPNETCORE_ENVIRONMENT
-          value: Development
-        - name: HANGFIRE_REDIS_CONNECTION
+          value: Production
+        - name: REDIS_CONNECTIONSTRING
           value: redis.redis.svc.cluster.local:6379
         volumeMounts:
         - name: automation-data

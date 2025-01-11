@@ -27,6 +27,13 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 7000
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Production
+        - name: AUTOMATION_HANGFIREAPI
+          value: http://automationhangfireapi:5000/api/job/
+        - name: BROWSER_LISTENERAPI
+          value: http://192.168.100.22:5001/open-browser
         volumeMounts:
         - name: automation-data
           mountPath: /watched/AutomationData
