@@ -29,7 +29,7 @@ spec:
         - containerPort: 7000
         env:
         - name: ASPNETCORE_ENVIRONMENT
-          value: Production
+          value: Development
         - name: AUTOMATION_HANGFIREAPI
           value: http://automationhangfireapi:5000/api/job/
         - name: BROWSER_LISTENERAPI
